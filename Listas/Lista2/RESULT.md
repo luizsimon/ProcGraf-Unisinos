@@ -20,10 +20,6 @@ Com o aumento das proporções, a figura (triângulo) deixa de ser visível no p
 
 ![Desenho](/Listas/Lista2/2_5/Prints/Ex2_5.png)
 
-## 5. Agora, desenhe a mesma cena nos 4 quadrantes.
-
-![Desenho](/Listas/Lista2/2_5/Prints/Ex2_5.png)
-
 ## 6. Crie triângulos a partir do clique do mouse
 
 Seu programa deve seguir os seguintes requisitos:
