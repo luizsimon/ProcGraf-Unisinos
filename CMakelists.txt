@@ -53,6 +53,11 @@ set(EXERCISES
     Lista1/7.Espiral/Ex7
     Lista1/8.Triangulo/Ex8
     Lista1/9.Casa/Ex9
+    Lista2/2_1/Ex2_1
+    Lista2/2_2/Ex2_2
+    Lista2/2_4/Ex2_4
+    Lista2/2_5/Ex2_5
+    Lista2/2_6/Ex2_6
 )
 
 add_compile_options(-Wno-pragmas)
