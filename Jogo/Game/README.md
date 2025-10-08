@@ -1,6 +1,6 @@
 # 🐵 Monkey Game
 
-Monkey Game é um jogo 2D simples desenvolvido usando OpenGL e C++, onde o objetivo é controlar um macaco para coletar bananas e evitar espadas que caem do céu. O projeto foi criado para demonstrar conceitos básicos de manipulação de sprites, renderização 2D, transformações de objetos e interações com o usuário utilizando OpenGL.
+Monkey Game é um jogo 2D simples desenvolvido usando OpenGL e C++, onde o objetivo é controlar um macaco para coletar bananas e evitar cocos que caem do céu. O projeto foi criado para demonstrar conceitos básicos de manipulação de sprites, renderização 2D, transformações de objetos e interações com o usuário utilizando OpenGL.
 
 Jogo Desenvolvido por Luiz Simon e Gustavo Cortezia
 
@@ -82,7 +82,7 @@ As texturas são carregadas a partir dos arquivos de imagem correspondentes usan
 
 - **Banana**: `../Textures/Banana/banana.png`
 - **Macaco (direita e esquerda)**: `../Textures/Macaco/macacoRight.png` e `../Textures/Macaco/macacoLeft.png`
-- **Espadas**: `../Textures/craftpix/PNG/Transperent/Icon5.png` e `Icon17.png`
+- **Cocos**: `../Textures/craftpix/PNG/Transperent/Icon5.png` e `Icon17.png`
 - **Background**: `../Textures/PixelArt/BackGround/nature_5/orig.png`
 - **Placar (números de 0 a 3)**: `../Textures/Placar/0.png` a `3.png`
 - **Botões**: `../Textures/Botoes/start.png`, `playAgain.png`, `exit.png`
@@ -99,7 +99,7 @@ Cada chamada a `loadTexture()` retorna um identificador de textura (`GLuint`), q
 São criadas instâncias da classe `Sprite` para cada elemento do jogo:
 
 - **Personagem Principal**: `macaco`
-- **Obstáculos**: `espada_1` e `espada_2`
+- **Obstáculos**: `coco_1` e `coco_2`
 - **Objetivo**: `banana`
 - **Elementos de Interface**: `background`, `gameOver`, `vitoria`, `placar`, `placarZero`, `placarUm`, `placarDois`, `placarTres`
 - **Botões**: `startButton`, `playAgainButton`, `exitButton`
@@ -109,12 +109,12 @@ São criadas instâncias da classe `Sprite` para cada elemento do jogo:
 - **Shader Associado**: Cada sprite tem o shader configurado com `setShader(shaderID)`.
 - **Inicialização**: Os sprites são inicializados com `inicializar(texID, posição, escala, ângulo)`:
   - Exemplo: `macaco.inicializar(texID_macacoR, vec3(300.0f, 120.0f, 0.0f), vec3(65.0f, 70.0f, 1.0f))`
-- **Velocidade de Queda**: Para sprites que caem (espadas e banana), a velocidade de queda é definida com `setFallSpeed(valor)`.
+- **Velocidade de Queda**: Para sprites que caem (cocos e banana), a velocidade de queda é definida com `setFallSpeed(valor)`.
 
 ### Configuração Específica de Sprites
 
 - **Macaco**: Inicia na posição `(300.0f, 120.0f)` com textura `macacoRight`.
-- **Espadas**: Iniciam acima da tela e caem em direção ao macaco.
+- **Cocos**: Iniciam acima da tela e caem em direção ao macaco.
 - **Banana**: Também cai do topo da tela e deve ser coletada pelo macaco.
 - **Placar**: Exibe a pontuação atual do jogador, atualizando a textura conforme o jogador coleta bananas.
 
@@ -137,13 +137,13 @@ O loop principal é responsável por atualizar o estado do jogo, processar entra
   - Aguarda o clique do usuário no botão "Start" para iniciar o jogo.
 - **1 - Jogo em Andamento**:
   - O macaco pode ser movido pelo jogador.
-  - As espadas e a banana caem em direção ao macaco.
+  - Os cocos e a banana caem em direção ao macaco.
   - Verifica colisões:
     - **Colisão com Banana**:
       - Incrementa a pontuação (`pontos++`).
       - Atualiza o placar exibido.
       - Verifica se o jogador alcançou a pontuação necessária para vencer (`pontos >= quantPont`).
-    - **Colisão com Espadas**:
+    - **Colisão com Cocos**:
       - Define o estado de Game Over (`gmOver = 1`).
       - Transita para o estado de Game Over (`gameState = 2`).
 - **2 - Tela de Game Over**:
@@ -155,15 +155,15 @@ O loop principal é responsável por atualizar o estado do jogo, processar entra
 
 #### Movimento dos Sprites
 
-- **Espadas e Banana**: Atualizam suas posições chamando `cair(false)`, fazendo com que caiam continuamente.
+- **Cocos e Banana**: Atualizam suas posições chamando `cair(false)`, fazendo com que caiam continuamente.
 - **Macaco**: Movido pelo usuário através das entradas de teclado.
 
 #### Verificação de Colisões
 
-- A função `colisao()` é utilizada para detectar colisões entre o macaco e as espadas ou banana.
+- A função `colisao()` é utilizada para detectar colisões entre o macaco e os cocos ou banana.
 - **Colisão com Banana**:
   - A banana é reposicionada para cair novamente.
-- **Colisão com Espadas**:
+- **Colisão com Cocos**:
   - O jogo é interrompido e transita para a tela de Game Over.
 
 ### 4.3. Renderização
@@ -175,7 +175,7 @@ O loop principal é responsável por atualizar o estado do jogo, processar entra
   - **Menu Inicial**:
     - Desenha o `background` e o `startButton`.
   - **Jogo em Andamento**:
-    - Desenha o `background`, `espada_1`, `espada_2`, `banana`, `placar` e o `macaco`.
+    - Desenha o `background`, `coco_1`, `coco_2`, `banana`, `placar` e o `macaco`.
   - **Tela de Game Over**:
     - Desenha o `background`, `gameOver`, `playAgainButton` e `exitButton`.
   - **Tela de Vitória**:
@@ -199,12 +199,12 @@ O programa retorna `0` indicando que foi encerrado com sucesso.
 
 ## 🎮 Como Jogar
 
-O objetivo do jogo é controlar o macaco para coletar bananas e evitar as espadas que caem do topo da tela. A cada banana coletada, o jogador ganha 1 ponto. Se o jogador atingir 3 pontos, ele ganha o jogo. Se colidir com uma espada, o jogo termina.
+O objetivo do jogo é controlar o macaco para coletar bananas e evitar os cocos que caem do topo da tela. A cada banana coletada, o jogador ganha 1 ponto. Se o jogador atingir 3 pontos, ele ganha o jogo. Se colidir com um coco, o jogo termina.
 
 ### Objetivo
 
 - **Coletar Bananas**: O macaco deve coletar bananas para ganhar pontos.
-- **Evitar Espadas**: O jogador deve desviar das espadas para não perder.
+- **Evitar cocos**: O jogador deve desviar dos cocos para não perder.
 
 ## 🕹️ Controles
 
