@@ -82,7 +82,7 @@ As texturas são carregadas a partir dos arquivos de imagem correspondentes usan
 
 - **Banana**: `../Textures/Banana/banana.png`
 - **Macaco (direita e esquerda)**: `../Textures/Macaco/macacoRight.png` e `../Textures/Macaco/macacoLeft.png`
-- **Cocos**: `../Textures/craftpix/PNG/Transperent/Icon5.png` e `Icon17.png`
+- **Cocos**: `../Textures/PixelArt/BackGround/coconut.png`
 - **Background**: `../Textures/PixelArt/BackGround/nature_5/orig.png`
 - **Placar (números de 0 a 3)**: `../Textures/Placar/0.png` a `3.png`
 - **Botões**: `../Textures/Botoes/start.png`, `playAgain.png`, `exit.png`
