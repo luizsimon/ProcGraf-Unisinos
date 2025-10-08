@@ -4,11 +4,6 @@ Monkey Game é um jogo 2D simples desenvolvido usando OpenGL e C++, onde o objet
 
 Jogo Desenvolvido por Luiz Simon e Gustavo Cortezia
 
-## Links Gravação:
-
-- https://www.youtube.com/watch?v=kfp1l2S9rFo
-- https://www.youtube.com/watch?v=9q1cnj7DtOM
-
 ## 📜 Sumário
 
 - [Instalação](#instalação)
@@ -32,24 +27,6 @@ Certifique-se de que seu ambiente tenha as seguintes bibliotecas instaladas:
 - **STB_IMAGE** - Biblioteca para carregamento de imagens como texturas.
 - **GLM** - Biblioteca para manipulação de vetores e matrizes.
 - **OpenGL** - Necessário para renderização gráfica.
-
-### Compilação
-
-Clone o repositório do projeto:
-
-```bash
-git clone https://github.com/StukerVitor/AtividadesPG
-```
-
-Entre no diretório do projeto:
-
-```bash
-cd '.\Jogo\HelloTriangle - VSCode\'
-```
-
-Rode o jogo através do botão play do VSCode.
-
-Certifique-se de que as bibliotecas necessárias estejam corretamente instaladas e linkadas no seu ambiente de desenvolvimento.
 
 ## 🔄 Fluxo de Execução do Jogo
 
