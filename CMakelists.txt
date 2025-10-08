@@ -88,8 +88,18 @@ foreach(EXERCISE ${EXERCISES})
     
     # Adiciona o executável usando o nome do arquivo como nome do executável
     add_executable(${EXE_NAME} Listas/${EXERCISE}.cpp ${GLAD_C_FILE})
-
-    # Configura as bibliotecas e include dirs para o executável
+    
     target_include_directories(${EXE_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include/glad ${glm_SOURCE_DIR} ${stb_image_SOURCE_DIR})
+    
+    # Configura as bibliotecas e include dirs para o executável
     target_link_libraries(${EXE_NAME} glfw ${OPENGL_LIBS} glm::glm)
 endforeach()
+
+add_executable(Source 
+    Jogo/Game/Source.cpp 
+    Jogo/Game/Sprite.cpp
+    Jogo/Dependencies/GLAD/src/glad.c
+    )
+    target_include_directories(Source PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/GLAD/include")
+
+    target_link_libraries(Source glfw ${OPENGL_LIBS} glm::glm)
