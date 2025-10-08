@@ -1,3 +1,0 @@
-D:\Trabalhos\Trabalhos_2025\2_semestre\cmake-4.0.2-windows-x86_64\cmake-4.0.2-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\Source.dir/objects.a
-C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\Source.dir/objects.a @CMakeFiles\Source.dir\objects1.rsp
-C:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Source.dir/objects.a -Wl,--no-whole-archive -o Source.exe -Wl,--out-implib,libSource.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Source.dir\linkLibs.rsp
