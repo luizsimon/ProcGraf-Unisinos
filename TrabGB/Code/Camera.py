@@ -172,10 +172,7 @@ def edit_image(image_path):
     count = 0
     while True:
         frame_filtered = image.copy()
-        
-        # (Todo o seu código de key = cv2.waitKey(1) & 0xFF... filters... stickers...)
-        # ... (O CÓDIGO INTERNO DO LOOP PERMANECE O MESMO) ...
-        # ...
+    
         key = cv2.waitKey(1) & 0xFF
         
         if key == ord('f'):
@@ -206,10 +203,7 @@ def edit_image(image_path):
         
         for (x, y, sticker) in stickers:
             frame_filtered = overlay_sticker(frame_filtered, sticker, x, y)
-        # ... (FIM DO CÓDIGO INTERNO) ...
 
-
-        # --- LINHA MODIFICADA ---
         if salvar == 1:
             # Define o caminho completo para salvar
             save_path = os.path.join(save_folder, f'imagem_editada{count}.jpg')
@@ -246,9 +240,6 @@ def edit_webcam():
 
         frame_filtered = frame.copy()
         
-        # (Todo o seu código de key = cv2.waitKey(1)... filters... stickers...)
-        # ... (O CÓDIGO INTERNO DO LOOP PERMANECE O MESMO) ...
-        # ...
         key = cv2.waitKey(1)
         
         if key == ord('f'):
@@ -279,10 +270,7 @@ def edit_webcam():
 
         for (x, y, sticker) in stickers:
             frame_filtered = overlay_sticker(frame_filtered, sticker, x, y)
-        # ... (FIM DO CÓDIGO INTERNO) ...
-        
 
-        # --- LINHA MODIFICADA ---
         if salvar == 1: 
             # Define o caminho completo para salvar
             save_path = os.path.join(save_folder, f'webcam_editada{count}.jpg')
